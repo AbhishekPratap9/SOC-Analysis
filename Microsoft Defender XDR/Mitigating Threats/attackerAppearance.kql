@@ -1,0 +1,9 @@
+let MaliciousSender = "dtrap112@xyz.com";
+EmailAttachmentInfo
+| where Timestamp > ago(30d)
+| where SenderFromAddress =~ MaliciousSender
+| join (
+DeviceFileEvents
+| where Timestamp > ago(30d)
+) on SHA 256
+| summarize FirstAppearance = min(Timestamp) by DeviceName, SHA256, FileName, Timestamp
