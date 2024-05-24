@@ -28,7 +28,7 @@ pending tab.
 > Semi (Approval for core folders remediation) - Approval is required for any remediation actions needed on 
 files or executable in core folder.
 
-Semi (Approval for non-temp folders) - Approval is required for only non-temp folders.
+> Semi (Approval for non-temp folders) - Approval is required for only non-temp folders.
   Temporary folders :
  * \users\appdata\local\temp
  * \documents and settings\local settings\temp
