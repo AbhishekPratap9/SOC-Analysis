@@ -3,7 +3,7 @@ insights to help reduce risks and safeguard digital space.
 User can investigate the alerts that affect network, inderstand meaning of 
 each single incident and also coorelate each one of them.
 
-- For Incident management, Defender needs different set of permissions
+- For Incident management, Defender needs different set of PERMISSIONS
    for different services it provides as:
 
    * Defender XDR - Mainly Investigating data, 
@@ -11,13 +11,13 @@ each single incident and also coorelate each one of them.
                     threat analytics,
                     Setting custom detections & remediation permissions.
 
-   * Defender for Endpoint - Data-security operations, 
+   * For Endpoint - Data-security operations, 
                              security settings & alerts, Threat analytics.
 
    * Office 365 - Security admin & reader permissions,
                   organization configuration and audit logs.
 
-   * Defender for cloud apps - Global admin, compliance admin level permissions.
+   * For cloud apps - Global admin, compliance admin level permissions.
 
  [ Services & protection ]
 
@@ -36,7 +36,7 @@ each single incident and also coorelate each one of them.
 * Vulnerability management -  intelligent risk-based assessments, built-in remediation tools,
                                prioritize and address critical vulnerabilities.
 
-[ Additional services ]
+[ Additional ]
 
 * Microsoft purview Compliance portal - Manage your compliance 
 for information governance, classification, case management, etc.
