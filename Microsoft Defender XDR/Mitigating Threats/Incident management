@@ -31,7 +31,7 @@ alerts prioritizing each one of them by SEVERITY including CATEGORIES & DETECTIO
      including the Email, IP, Files, User activities, etc.
 
      Under Evidence tab we can hunt for the files remediated or malicious in our org.
-     by performing a hunting query (query in madcatFilesearch file):
+     by performing a hunting query (query in madcatFilesearch.kql file):
 
 
 [ ... ]
