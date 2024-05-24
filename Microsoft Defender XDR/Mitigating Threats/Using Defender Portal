@@ -1,1 +1,57 @@
-D
+Across the defender portal all the services are integrated to provide actionable
+insights to help reduce risks and safeguard your digital space.
+User can investigate the alerts that affect your network, inderstand meaning of 
+each single incident and also coorelate each one of them.
+
+- For Incident management, Defender needs different set of permissions
+   for different services it provides as:
+
+   * Defender XDR - Mainly Investigating data, 
+                    alerts & incident management,
+                    threat analytics,
+                    Setting custom detections & remediation permissions.
+
+   * Defender for Endpoint - Data-security operations, 
+                             security settings & alerts, Threat analytics.
+
+   * Office 365 - Security admin & reader permissions,
+                  organization configuration and audit logs.
+
+   * Defender for cloud apps - Global admin, compliance admin level permissions.
+
+ [ Services & protection ]
+
+* Endpoint - preventative protection, post-breach detection, automated investigation,
+             and response for devices in your organization.
+
+* Cloud Apps - cross-SaaS and PaaS solution bringing deep visibility, 
+              strong data controls, and enhanced threat protection to your cloud apps.
+
+* Identity - cloud-based security solution that uses your on-premises Active Directory 
+             signals to identify, detect, and investigate advanced threats, compromised identities, 
+             and malicious insider actions directed at your organization.
+
+* Defender XDR -  automatically analyze threat data across domains, and build a picture of an attack
+                  on a single dashboard.
+
+* Vulnerability management -  intelligent risk-based assessments, and built-in remediation tools to help
+                               your security and IT teams prioritize and address critical vulnerabilities 
+                               and misconfigurations across your organization.
+
+[ Additional services ]
+
+* Microsoft purview Compliance portal - Manage your compliance needs across Microsoft 365
+services using integrated solutions for information governance, classification, case management,
+and more.
+
+* Microsoft Entra ID & Protection - Manage your organization's identities. Set up multifactor 
+authentication, track user sign-ins, edit company branding, and more.
+Detect potential vulnerabilities affecting your organization's identities.
+Investigate suspicious incidents related to your organization's identities and set up 
+automated responses to resolve them.
+
+* Azure Information protection - Configure and manage the Azure Information Protection client 
+and scanner to automatically classify and protect your organization's email and docs. Use reports
+to monitor label usage and identify sensitive info that should be protected.
+
+
