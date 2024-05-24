@@ -1,0 +1,18 @@
+Built in Threat intelligence
+Whenever a threat is expereinced by system an alert is created and a short report is built having several sections:
+* Overview
+* Analyst Report
+* Related Incidents 
+* Impacted Assets
+* prevented Email attempts
+* Exposure & mitigations
+
+For comparing security resilience and posture statuses are created as:
+* Secure configuration status
+* Vulnerability patching status
+
+Threat tags:
+* Ransomeware
+* Phishing
+* Vulnerability
+* Activity group
