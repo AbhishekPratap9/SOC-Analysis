@@ -1,2 +1,47 @@
-Connect and analyze across:
-Applications, Endpoints, Identity & Data
+Connect and analyze across domains:
+APPLICATIONS, ENDPOINTS, IDENTITY & DATA
+
+Threat protection analyze & normalize alerts and connected events across multiple domains 
+infusing them into a single incidence for better view and understandibility of events.
+
+Incidence Queue is the central location to prioritize and analyze for the cross-domain attackls and 
+alerts prioritizing each one of them by SEVERITY including CATEGORIES & DETECTION SOURCES.
+
+[ STARTING AN INVESTIGATION ]
+
+  1) select an incidence
+
+  2) summary tab describes the incidence scope and context 
+     (MITRE mapping, Impacted Entities, meta data, impacted devices, etc.)
+
+  3) Alerts tab lists alerts linked to this incidence
+     (Many of them resolved with automation and AI, alerts severity, category, etc are also shown.)
+
+  4) Devices tab lists each devices impacted with risk level and other meta data
+     (Detail tab lists other useful info like OS, creation date, Domain, etc.)
+
+  5) Users Tab lists all the users associated with incidence.
+
+  6) Mailboxes tab lists all the mailboxes associated with the incidence.
+
+  7) Investigation tab lists the statuses of the investigation performed by
+     automation and another details associated with the investigation performed.
+
+  8) Evidence tab shows all the evidence that automation investigated upon 
+     including the Email, IP, Files, User activities, etc.
+
+     Under Evidence tab we can hunt for the files remediated or malicious in our org.
+     by performing a hunting query (query in madcatFilesearch file):
+
+
+let selectedTimestamp = datetime(2024-05-24T11:10:34.0000000Z);
+let fileName = "mad cat";
+let fileSha1 = "5cb9e9390015759fa10321f71c5d164f5152da04";
+search in (DeviceFileEvents, EmailAttachmentInfo, AppFileEvents)
+Timestamp between ((selectedTimestamp - 1h) .. (selectedTimestamp + 1h))
+and FileName =~ fileName 
+
+
+
+     When the incidence you took the charge seems to you satisfied and resolved,
+     mark it as resolved and provide other information regarding the incidence.
