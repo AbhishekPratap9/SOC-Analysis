@@ -1,0 +1,6 @@
+let selectedTimestamp = datetime(2024-05-24T11:10:34.0000000Z);
+let fileName = "mad cat";
+let fileSha1 = "5cb9e9390015759fa10321f71c5d164f5152da04";
+search in (DeviceFileEvents, EmailAttachmentInfo, AppFileEvents)
+Timestamp between ((selectedTimestamp - 1h) .. (selectedTimestamp + 1h))
+and FileName =~ fileName 
