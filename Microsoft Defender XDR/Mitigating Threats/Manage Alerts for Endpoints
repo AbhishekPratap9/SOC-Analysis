@@ -1,1 +1,54 @@
-A
+At Endpoint Domain, defender combine attack signals and related alerts to showcase an alert and a tree 
+of similar alerts for better investigation and quick actions.
+
+[ ALERT MANAGEMENT ]
+
+Click on the Alert you wanna investigate 
+   There are 4 sections in the Alerts Page TITLE, AFFECTED ASSETS, THE DETAILED SIDE PANE & ALERT STORY
+
+   TITLE - current investigation name 
+
+   AFFECTED ASSETS - include users and devices affected by this alert. select them for more information 
+                      regarding number of alerts, application trigerred, etc. details.
+
+   DETAILED SIDE PANE - details and actions related to the selected object. The detailed side pane appears
+                        on selection of any object that contain any additional information.
+                        Reason for trigerring the alert, related events happened, devices, etc.
+
+   ALERT STORY - display all entity related to the alert inter-connected in a tree-view.
+                 Additional details can be also obtained by this tree regarding small details of the alerts.
+                 Contains all other actions for more investigation under the ellipses button.
+
+After Total remediation and investigation of alert mark the status and provide other valuable information
+for updating the playbook.
+
+[ Severity ]
+
+High(Red) - Might be APT(Advanced persistent threat), indicate high risk, severity of damage,
+            credential theft, ransomeware, etc.
+
+Medium(Orange) - part of APTs, anomalous registry actions, executed suspicious files, etc.
+
+Low(Yellow) - threats, exploration commands, clearing logs, indication of targeting, etc.
+
+Informational(Grey) - Sake of security awareness, potential security issues insights, etc.
+
+
+[ Alert Categories ]
+
+Collection - Locating and collecting data for exfiltration
+Command and control - Connecting to malicious address or hacker's IP
+Credential access - Valid credential breaching and obtaining
+Defense evasion - Bypassing security controls, turning off security apps, running rootkits,etc.
+Discovery - Gathering information such as domain controllers, network's devices info, file servers, etc.
+Execution - Executing malicious software such as RATs.
+Exfiltration - Extracting data from network or device.
+Exploit - Exploiting code and other apps or network commands ,etc.
+Initial access - Gaining initial entry to the target network ex, phishing email, password-guess,etc.
+Lateral Movement - Moving between netork devices for critical resources.
+Malware  - Identify as Backdoors, Trojans, Worms, Virus, malicious code.
+Persistance - Creating ASEPs( Autostart extensibility points ), scheduled tasks for persistance, etc.
+Privilege escalation - Obtain higher permission by running code in a privilege process.
+Ransomeware - Encrypts file on device or across network.
+Suspicious activity - Any typical behavior that wasn't expected normally.
+Unwanted software - Low-reputation apps, potentially unwanted apps.
