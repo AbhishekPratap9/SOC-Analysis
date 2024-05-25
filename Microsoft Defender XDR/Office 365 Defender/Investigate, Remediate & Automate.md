@@ -10,7 +10,9 @@ AIR works as:
 * A playbook log is created to view all the actions that were taken for admin to view.
 
   In the Alert section you can view all the triggered alerts and clicking on a specific alert
-  you can view the more detailed picture and graphs on why and how the alert got triggered.
+  you can view the more detailed picture and graphs on why and how the alert got triggered.<br>
+  ![image](https://github.com/AbhishekPratap9/SOC-Analysis/assets/156197198/7041999c-c260-4f38-8809-60096f4e2328)
+
 
   AIR can perform certain remediation actions like (these options can be found in the action tab)
   * Soft delete email messages or clusters
@@ -19,4 +21,6 @@ AIR works as:
   * turn off delegation
  
     Defender in the Office 365 maps the malicious users, IP, related mails and subsets of that
-    emails. It group them together, so that appropriate actions can be taken by the admin or AIR.
+    emails. It group them together, so that appropriate actions can be taken by the admin or AIR.<br>
+    ![image](https://github.com/AbhishekPratap9/SOC-Analysis/assets/156197198/a467296a-ac39-493c-a8d5-c8fcc2b973b4)
+
