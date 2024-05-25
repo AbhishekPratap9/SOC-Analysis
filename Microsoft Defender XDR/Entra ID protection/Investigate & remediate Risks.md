@@ -7,9 +7,11 @@ Actions that admins can take on :
 
 * Risky sign-in - Confirm the sign-in are safer or confirm it is compromised or not.
 * Risky Users - Reset user passwords, dismiss user risk, block user sign-ins, and confirm user accounts 
-                as compromised.
+                as compromised.<br>You can download the reports of the risks and their detail<br><br>
+                ![image](https://github.com/AbhishekPratap9/SOC-Analysis/assets/156197198/594fd5fa-7ed2-46ab-bc2b-b956fd4a0a8c)<br>
 
-Another methods for remediation are Self-remediation, Reset passwords manually
+
+Another methods for remediation are Self-remediation, Reset passwords manually<br>
 
 Unblock the user after remediation and if they are facing issues, Dismiss user risk detections or Close individual 
 detection can be tried.
