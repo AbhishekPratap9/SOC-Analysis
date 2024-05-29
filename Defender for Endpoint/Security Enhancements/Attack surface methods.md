@@ -10,4 +10,6 @@
 * select OK
 
 **Endpoint Security Policy**
-* *select Endpoint security -> Attack surface reduction*
+* *select Endpoint security -> Attack surface reduction* : Choose an existing rule or create a new one. To create a new one, select Create Policy and enter information for this profile. For Profile type, select Attack surface reduction rules. If you've chosen an existing profile, select Properties and then select Settings.
+* *Attack Surface Reduction -> select the desired setting for each rule*
+* 
