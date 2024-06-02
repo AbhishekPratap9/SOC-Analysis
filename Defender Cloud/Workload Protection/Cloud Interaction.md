@@ -2,7 +2,7 @@
   1)search for Log analytics in the Azure portal:<br>
   ![Screenshot (91)](https://github.com/AbhishekPratap9/SOC-Analysis/assets/156197198/8d2ea80c-1073-42e6-8806-457a3a0dfd65)<br><br>
   2) On the Log analytics workspace click create for creating the log analytics workspace and then fill the details, click create + review then final create after final review.
-  ![Screenshot (93)](https://github.com/AbhishekPratap9/SOC-Analysis/assets/156197198/c8ac7292-9661-424b-81b9-a4d9a2b0744a)<br><br>
+  ![image](https://github.com/AbhishekPratap9/SOC-Analysis/assets/156197198/c7d97f65-3c38-4347-9ee9-8a33570fcdcc)
   3) After deployment, we have successfully created a log analytics workspace:<br>
   ![image](https://github.com/AbhishekPratap9/SOC-Analysis/assets/156197198/5746bd0c-5f0e-4d20-8da5-5885b833a76d)<br>
 
