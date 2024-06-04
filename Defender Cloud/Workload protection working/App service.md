@@ -1,0 +1,4 @@
+Azure App Service is platform for building and hosting web apps and APIs<br>
+Provides management, monitoring, and operational insights to meet enterprise-grade performance, security, and compliance requirements.Defender for App Service uses the scale of the cloud to identify attacks targeting applications running over App Service.<br>
+* Defender for Cloud analyzes App Service internal logs to identify attack methodology on multiple targets.
+* If you're running a Windows-based App Service plan, Defender for Cloud also has access to the underlying sandboxes and VMs. Together with the log data mentioned above, the infrastructure can tell the story, from a new attack circulating in the wild to compromises in customer machines. Therefore, even if Defender for Cloud is deployed after a web app has been exploited, it might be able to detect ongoing attacks.
