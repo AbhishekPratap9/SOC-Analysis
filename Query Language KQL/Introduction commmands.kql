@@ -1,0 +1,72 @@
+// Search operaor
+search "err"
+
+search in (SecurityEvent,SecurityAlert,A*) "err"
+
+// Where operator
+SecurityEvent
+| where TimeGenerated > ago(1d)
+
+SecurityEvent
+| where TimeGenerated > ago(1h) and EventID == "4624"
+
+SecurityEvent
+| where TimeGenerated > ago(1h)
+| where EventID == 4624
+| where AccountType =~ "user"
+
+SecurityEvent | where EventID in (4624, 4625)
+
+// Let operator
+
+  // Declare and Reuse variables:
+  let timeOffset = 7d;
+  let discardEventId = 4688;
+  SecurityEvent
+  | where TimeGenerated > ago(timeOffset*2) and TimeGenerated < ago(timeOffset)
+  | where EventID != discardEventId
+
+  // Declare dynamic tables or lists:
+  let suspiciousAccounts = datatable(account: string) [
+      @"\administrator", 
+      @"NT AUTHORITY\SYSTEM"
+  ];
+  SecurityEvent | where Account in (suspiciousAccounts)
+
+  // or 
+  let LowActivityAccounts =
+      SecurityEvent 
+      | summarize cnt = count() by Account 
+      | where cnt < 1000;
+  LowActivityAccounts | where Account contains "SQL"
+
+// Extend operator
+SecurityEvent
+| where ProcessName != "" and Process != ""
+| extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process))
+
+// Order by operator
+SecurityEvent
+| where ProcessName != "" and Process != ""
+| extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process))
+| order by StartDir desc, Process asc
+
+// Project operator
+
+  // Project
+  SecurityEvent
+  | project Computer, Account
+
+
+  SecurityEvent
+  | where ProcessName != "" and Process != ""
+  | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process))
+  | order by StartDir desc, Process asc
+  | project Process, StartDir
+
+  // project-away
+  SecurityEvent
+  | where ProcessName != "" and Process != ""
+  | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process))
+  | order by StartDir desc, Process asc
+  | project-away ProcessName
