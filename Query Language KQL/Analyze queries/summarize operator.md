@@ -91,3 +91,22 @@ The SecurityEvent table will first be summarized and return the most current row
 Statement 2 will have the most recent Logon for Accounts that have logged in.
 
 The SecurityEvent table will be filtered to only include EventID = 4624. Then these results will be summarized for the most current Logon row by Account.
+
+
+### make_list() function
+function returns a dynamic (JSON) array of all the values of Expression in the group
+```
+SecurityEvent
+| where EventID == "4624"
+| summarize make_list(Account) by Computer
+```
+![image](https://github.com/AbhishekPratap9/SOC-Analysis/assets/156197198/9f27e618-037c-444b-89a4-63810ac0a619)
+
+### make_set() function
+Returns a dynamic (JSON) array containing distinct values that Expression takes in the group
+```
+SecurityEvent
+| where EventID == "4624"
+| summarize make_set(Account) by Computer
+```
+![image](https://github.com/AbhishekPratap9/SOC-Analysis/assets/156197198/489ee149-5efa-44a0-ad6d-9015fe801c54)
