@@ -1,0 +1,38 @@
+SecurityEvent | summarize by Activity
+
+SecurityEvent
+| where EventID == "4688"
+| summarize count() by Process, Computer
+
+// count of unique ip address (dcount)
+SecurityEvent
+| summarize dcount(IpAddress)
+
+//detect Invalid password failures across multiple applications for the account (example)
+let timeframe = 30d;
+let threshold = 1;
+SigninLogs
+| where TimeGenerated >= ago(timeframe)
+| where ResultDescription has "Invalid password"
+| summarize applicationCount = dcount(AppDisplayName) by UserPrincipalName, IPAddress
+| where applicationCount >= threshold
+
+//arg_max() function filter out top rows.
+SecurityEvent 
+| where Computer == "SQL12.na.contosohotels.com"
+| summarize arg_max(TimeGenerated,*) by Computer
+
+//arg_min() function filter out bottom rows.
+SecurityEvent 
+| where Computer == "SQL12.na.contosohotels.com"
+| summarize arg_min(TimeGenerated,*) by Computer
+
+//make list function example
+SecurityEvent
+| where EventID == "4624"
+| summarize make_list(Account) by Computer
+
+// make set function example
+SecurityEvent
+| where EventID == "4624"
+| summarize make_set(Account) by Computer
