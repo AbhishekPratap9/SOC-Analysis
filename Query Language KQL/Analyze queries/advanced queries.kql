@@ -1,0 +1,73 @@
+// Unstructured string fields
+
+// extract
+SecurityEvent
+| where EventID == 4672 and AccountType == 'User'
+| extend Account_Name = extract(@"^(.*\\)?([^@]*)(@.*)?$", 2, tolower(Account))
+| summarize LoginCount = count() by Account_Name
+| where Account_Name != ""
+| where LoginCount < 10
+
+// parse
+let Traces = datatable(EventText:string)
+[
+"Event: NotifySliceRelease (resourceName=PipelineScheduler, totalSlices=27, sliceNumber=23, lockTime=02/17/2016 08:40:01, releaseTime=02/17/2016 08:40:01, previousLockTime=02/17/2016 08:39:01)",
+"Event: NotifySliceRelease (resourceName=PipelineScheduler, totalSlices=27, sliceNumber=15, lockTime=02/17/2016 08:40:00, releaseTime=02/17/2016 08:40:00, previousLockTime=02/17/2016 08:39:00)",
+"Event: NotifySliceRelease (resourceName=PipelineScheduler, totalSlices=27, sliceNumber=20, lockTime=02/17/2016 08:40:01, releaseTime=02/17/2016 08:40:01, previousLockTime=02/17/2016 08:39:01)",
+"Event: NotifySliceRelease (resourceName=PipelineScheduler, totalSlices=27, sliceNumber=22, lockTime=02/17/2016 08:41:01, releaseTime=02/17/2016 08:41:00, previousLockTime=02/17/2016 08:40:01)",
+"Event: NotifySliceRelease (resourceName=PipelineScheduler, totalSlices=27, sliceNumber=16, lockTime=02/17/2016 08:41:00, releaseTime=02/17/2016 08:41:00, previousLockTime=02/17/2016 08:40:00)"
+];
+Traces  
+| parse EventText with * "resourceName=" resourceName ", totalSlices=" totalSlices:long * "sliceNumber=" sliceNumber:long * "lockTime=" lockTime ", releaseTime=" releaseTime:date "," * "previousLockTime=" previousLockTime:date ")" *  
+| project resourceName, totalSlices, sliceNumber, lockTime, releaseTime, previousLockTime
+
+
+// Structured string fields
+
+// dynamic fields
+  // key-value pair
+  {"eventCategory":"Autoscale","eventName":"GetOperationStatusResult","operationId":"xxxxxxxx-6a53-4aed-bab4-575642a10226","eventProperties":"{\"OldInstancesCount\":6,\"NewInstancesCount\":5}","eventDataId":" xxxxxxxx -efe3-43c2-8c86-cd84f70039d3","eventSubmissionTimestamp":"2020-11-30T04:06:17.0503722Z","resource":"ch-appfevmss-pri","resourceGroup":"CH-RETAILRG-PRI","resourceProviderValue":"MICROSOFT.COMPUTE","subscriptionId":" xxxxxxxx -7fde-4caf-8629-41dc15e3b352","activityStatusValue":"Succeeded"}
+
+  // dot operator for string access
+  SigninLogs 
+  | extend OS = DeviceDetail.operatingSystem
+
+  // example
+  // Example query for SigninLogs showing how to break out packed fields.
+
+  SigninLogs 
+  | extend OS = DeviceDetail.operatingSystem, Browser = DeviceDetail.browser 
+  | extend StatusCode = tostring(Status.errorCode), StatusDetails = tostring(Status.additionalDetails) 
+  | extend Date = startofday(TimeGenerated) 
+  | summarize count() by Date, Identity, UserDisplayName, UserPrincipalName, IPAddress, ResultType, ResultDescription, StatusCode, StatusDetails 
+  | sort by Date
+
+// JSON
+SigninLogs 
+| extend AuthDetails =  parse_json(AuthenticationDetails) 
+| extend AuthMethod =  AuthDetails[0].authenticationMethod 
+| extend AuthResult = AuthDetails[0].["authenticationStepResultDetail"] 
+| project AuthMethod, AuthResult, AuthDetails 
+
+
+SigninLogs 
+| mv-expand AuthDetails = parse_json(AuthenticationDetails) 
+| project AuthDetails
+
+SigninLogs 
+| mv-apply AuthDetails = parse_json(AuthenticationDetails) on
+(where AuthDetails.authenticationMethod == "Password")
+
+
+// Integrate external data
+
+//external data
+externaldata ( ColumnName : ColumnType [, ...] )
+  [ StorageConnectionString [, ...] ]
+  [with ( PropertyName = PropertyValue [, ...] )]
+
+Users
+| where UserID in ((externaldata (UserID:string) [
+    @"https://storageaccount.blob.core.windows.net/storagecontainer/users.txt" 
+      h@"?...SAS..."]))
+|
