@@ -13,11 +13,12 @@ externaldata ( ColumnName : ColumnType [, ...] )
 * Properties
   ![image](https://github.com/AbhishekPratap9/SOC-Analysis/assets/156197198/38f4ff2f-87be-4b68-a9b1-b1f4b4ed4c99)
 
-  ```
-  Users
+```
+Users
 | where UserID in ((externaldata (UserID:string) [
     @"https://storageaccount.blob.core.windows.net/storagecontainer/users.txt" 
       h@"?...SAS..."]))
-| ...
+|
+
 ```
 
