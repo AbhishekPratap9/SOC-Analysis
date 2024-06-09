@@ -1,6 +1,6 @@
 * **Environment setup**
   Involves few starting steps as:
-  * Selcting the data storage center
+  * Selecting the data storage center
   * Checking the preview settings and Network configuration, if uses proxy within organization.
 * **Compatibility**
   Choose defender for endpoint according to different OS on it, Defender supports:
