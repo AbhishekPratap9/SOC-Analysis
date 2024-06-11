@@ -1,5 +1,5 @@
 * **Create a Log Analytics workspace** <br><br>
-  1)search for Log analytics in the Azure portal:<br>
+  1) Search for Log analytics in the Azure portal:<br>
   ![Screenshot (91)](https://github.com/AbhishekPratap9/SOC-Analysis/assets/156197198/8d2ea80c-1073-42e6-8806-457a3a0dfd65)<br><br>
   2) On the Log analytics workspace click create for creating the log analytics workspace and then fill the details, click create + review then final create after final review.
   ![image](https://github.com/AbhishekPratap9/SOC-Analysis/assets/156197198/c7d97f65-3c38-4347-9ee9-8a33570fcdcc)
@@ -9,7 +9,7 @@
 
 
 * **Enable and configure Microsoft Defender for cloud** <br><br>
-  1)Search for defender for cloud in the search bar in the Azure home portal<br>
+  1) Search for defender for cloud in the search bar in the Azure home portal<br>
   ![image](https://github.com/AbhishekPratap9/SOC-Analysis/assets/156197198/d3590117-202b-469f-b9c9-ea985e4a04ec)<br><br>
   2) Enable the subscription and select the environment settings in the left pane of defender for cloud<br>
   ![image](https://github.com/AbhishekPratap9/SOC-Analysis/assets/156197198/c4283515-256d-4862-b2ea-51f4b8fd6a0c)<br>
