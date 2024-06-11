@@ -2,7 +2,7 @@ Unifying capabilities of microsoft Defender XDR with microsoft Sentinel allows y
 Defender XDR incidents into microsoft sentinel.
 
 Defender XDR being EDR(Endpoint detection & Response) tool and Microsoft sentinel is a SIEM & SOAR tool.
-The incidents remain bi-directionally synced between both portals, allowing you to leverage the strengths
+The incidents in the system remain bi-directionally synced between both portals, allowing you to leverage the strengths
 of both tools in your incident investigations.
 
 XDR combines signals from:
