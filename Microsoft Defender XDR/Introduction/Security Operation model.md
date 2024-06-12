@@ -7,7 +7,7 @@ TIER 3 (Hunting, Advanced Forensics & Detection tuning, Hunt & Incident manageme
 
 TIER 2 (Advanced Analysis, Remediation, Investigation & Incident management):
  [ Primary Tool : XDR, 
-   Comprise of High complex incidents comprising:
+Comprise of High complex incidents comprising:
     * Escalations & multi-stage incidents
     * Alerts on critical assets
     * Monitoring known campaigns ]
