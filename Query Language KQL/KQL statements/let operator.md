@@ -11,14 +11,14 @@ SecurityEvent
 ```
 
 * Let statements allow for the creation of dynamic tables or lists.
-  ```
+```
 let suspiciousAccounts = datatable(account: string) [
 @"\administrator",
 @"NT AUTHORITY\SYSTEM"
 ];
 SecurityEvent | where Account in (suspiciousAccounts)
 
-  ```
+```
 
 ```
 let LowActivityAccounts =
